@@ -13,11 +13,6 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->unsignedBigInteger('user_id');
-            //con esto elimina todos la basura con ese id de la BD
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('text');
             $table->timestamps();
         });
     }
